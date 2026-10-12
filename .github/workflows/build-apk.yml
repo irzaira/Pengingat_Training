@@ -18,9 +18,10 @@ jobs:
       - run: npm install
       - run: npx cap add android
       - run: npx cap sync android
-      - name: Izinkan alarm tepat waktu
+      - name: Pasang plugin SMS dan izin
         run: |
-          sed -i 's#</manifest>#    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />\n</manifest>#' android/app/src/main/AndroidManifest.xml
+          cp native/SmsSenderPlugin.java native/MainActivity.java android/app/src/main/java/com/pengingat/license/
+          sed -i 's#</manifest>#    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />\n    <uses-permission android:name="android.permission.SEND_SMS" />\n    <uses-feature android:name="android.hardware.telephony" android:required="false" />\n</manifest>#' android/app/src/main/AndroidManifest.xml
       - run: chmod +x gradlew && ./gradlew assembleDebug
         working-directory: android
       - uses: actions/upload-artifact@v4
