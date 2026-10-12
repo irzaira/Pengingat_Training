@@ -41,8 +41,18 @@
     <input id="tpl" autocomplete="off" autocapitalize="off" placeholder="template_xxxxxxx">
     <label for="key">Public Key</label>
     <input id="key" autocomplete="off" autocapitalize="off" placeholder="Public key dari akun EmailJS">
-    <div class="chk"><input type="checkbox" id="auto"><label for="auto">Kirim otomatis saat aplikasi dibuka (ulang tiap 7 hari)</label></div>
+    <div class="chk"><input type="checkbox" id="auto"><label for="auto">Kirim otomatis saat aplikasi dibuka (tiap hari di 5 hari terakhir, selain itu tiap 7 hari)</label></div>
     <button class="btn p full" id="saveCfg">Simpan pengaturan</button>
+  </details>
+</section>
+
+<section>
+  <details>
+    <summary>Cadangan data</summary>
+    <label for="bkTxt">Teks cadangan</label>
+    <textarea id="bkTxt" rows="4" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Tempel teks cadangan di sini untuk memulihkan"></textarea>
+    <button class="btn p full" id="bkExp">Buat dan salin cadangan</button>
+    <button class="btn full" id="bkImp">Pulihkan dari teks di atas</button>
   </details>
 </section>
 
