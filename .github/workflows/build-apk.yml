@@ -20,7 +20,7 @@ jobs:
       - run: npx cap sync android
       - name: Pasang plugin SMS dan izin
         run: |
-          cp native/SmsSenderPlugin.java native/MainActivity.java android/app/src/main/java/com/pengingat/license/
+          cp native/SmsSenderPlugin.java native/MainActivity.java android/app/src/main/java/com/pengingat/training/
           sed -i 's#</manifest>#    <uses-permission android:name="android.permission.USE_EXACT_ALARM" />\n    <uses-permission android:name="android.permission.SEND_SMS" />\n    <uses-feature android:name="android.hardware.telephony" android:required="false" />\n</manifest>#' android/app/src/main/AndroidManifest.xml
       - run: chmod +x gradlew && ./gradlew assembleDebug
         working-directory: android

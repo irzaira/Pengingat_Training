@@ -1,4 +1,4 @@
-package com.pengingat.license;
+package com.pengingat.training;
 
 import android.Manifest;
 import android.os.Build;
