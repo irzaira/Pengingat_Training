@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pengingat License</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Pengingat License</h1>
+  <p>Catat masa berlaku license peserta dan kirim pengingat ke email mereka.</p>
+</header>
+<div class="stats" id="stats"></div>
+<div id="banner"></div>
+
+<section>
+  <h2 id="formTitle">Tambah license</h2>
+  <label for="pid">ID peserta</label>
+  <input id="pid" autocomplete="off" placeholder="Contoh: 10234567">
+  <label for="nama">Nama peserta</label>
+  <input id="nama" autocomplete="off" placeholder="Nama lengkap">
+  <label for="email">Email peserta</label>
+  <input id="email" type="email" inputmode="email" autocomplete="off" placeholder="nama@perusahaan.com">
+  <label for="lic">Nama license</label>
+  <input id="lic" autocomplete="off" placeholder="Contoh: Operator ADT">
+  <label for="exp">Tanggal kedaluwarsa</label>
+  <input id="exp" type="date">
+  <div class="err" id="err" role="alert"></div>
+  <button class="btn p full" id="save">Simpan license</button>
+  <button class="btn full" id="cancel" hidden>Batal ubah</button>
+</section>
+
+<section>
+  <details id="cfgBox">
+    <summary>Pengaturan EmailJS</summary>
+    <label for="svc">Service ID</label>
+    <input id="svc" autocomplete="off" autocapitalize="off" placeholder="service_xxxxxxx">
+    <label for="tpl">Template ID</label>
+    <input id="tpl" autocomplete="off" autocapitalize="off" placeholder="template_xxxxxxx">
+    <label for="key">Public Key</label>
+    <input id="key" autocomplete="off" autocapitalize="off" placeholder="Public key dari akun EmailJS">
+    <div class="chk"><input type="checkbox" id="auto"><label for="auto">Kirim otomatis saat aplikasi dibuka (ulang tiap 7 hari)</label></div>
+    <button class="btn p full" id="saveCfg">Simpan pengaturan</button>
+  </details>
+</section>
+
+<div class="set">
+  <label for="days">Ingatkan sebelum kedaluwarsa</label>
+  <select id="days">
+    <option value="7">7 hari</option><option value="14">14 hari</option><option value="30">30 hari</option>
+    <option value="60">60 hari</option><option value="90">90 hari</option>
+  </select>
+</div>
+
+<div id="list"></div>
+<footer>Data tersimpan di HP ini saja.</footer>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
